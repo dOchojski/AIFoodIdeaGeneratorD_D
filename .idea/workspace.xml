@@ -4,24 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0c76399-b54e-4353-b2c3-bba2eb0e70a0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/d_d/aifoodideageneratord_d/AiFoodIdeaGeneratorD_DApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/d_d/aifoodideageneratord_d/Launcher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/d_d/aifoodideageneratord_d/RecommendationWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/d_d/aifoodideageneratord_d/config/ConfigLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/d_d/aifoodideageneratord_d/controller/ProductListController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/d_d/aifoodideageneratord_d/controller/RecommendationWindowController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/d_d/aifoodideageneratord_d/services/AiRecommendationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/d_d/aifoodideageneratord_d/product-list-view.fxml" afterDir="false" />
+    <list default="true" id="c0c76399-b54e-4353-b2c3-bba2eb0e70a0" name="Changes" comment="all changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/d_d/aifoodideageneratord_d/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/d_d/aifoodideageneratord_d/ProductListApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/d_d/aifoodideageneratord_d/HelloController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/d_d/aifoodideageneratord_d/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/d_d/aifoodideageneratord_d/recommendation-window.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/d_d/aifoodideageneratord_d/ProductListApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/d_d/aifoodideageneratord_d/ProductListApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/d_d/aifoodideageneratord_d/RecommendationWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/d_d/aifoodideageneratord_d/RecommendationWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/d_d/aifoodideageneratord_d/controller/ProductListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/d_d/aifoodideageneratord_d/controller/ProductListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/d_d/aifoodideageneratord_d/controller/RecommendationWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/d_d/aifoodideageneratord_d/controller/RecommendationWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/d_d/aifoodideageneratord_d/services/AiRecommendationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/d_d/aifoodideageneratord_d/services/AiRecommendationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/d_d/aifoodideageneratord_d/product-list-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/d_d/aifoodideageneratord_d/product-list-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,11 +86,34 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1706833418348</updated>
-      <workItem from="1706833419396" duration="789000" />
+      <workItem from="1706833419396" duration="6931000" />
     </task>
+    <task id="LOCAL-00001" summary="all changes">
+      <created>1706834305844</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1706834305844</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="all changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="all changes" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/d_d/aifoodideageneratord_d/RecommendationWindow.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

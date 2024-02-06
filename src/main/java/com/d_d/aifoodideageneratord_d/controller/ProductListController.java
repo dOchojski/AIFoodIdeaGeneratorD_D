@@ -30,7 +30,12 @@ public class ProductListController {
     }
 
     @FXML
-    protected void recommend() throws IOException {
-        new RecommendationWindow(productList.getItems()).open();
+    protected void recommendSweetRecipe() throws IOException {
+        new RecommendationWindow(productList.getItems(), "sweet").open();
+    }
+
+    @FXML
+    protected void recommendSavouryRecipe() throws IOException {
+        new RecommendationWindow(productList.getItems(), "savoury").open();
     }
 }

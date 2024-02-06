@@ -20,8 +20,16 @@ public class AiRecommendationService {
         this.openAiService = new OpenAiService(properties.getProperty("token"), Duration.ofSeconds(60));
     }
 
-    public String getRecommendation(List<String> products) {
-        String question = createQuestion(products);
+    public String getRecommendation(List<String> products, String choice) {
+        String question;
+        if ("sweet".equals(choice)) {
+            question = createQuestionSweetRecipe(products);
+        } else if ("savoury".equals(choice)) {
+            question = createQuestionSavouryRecipe(products);
+        } else {
+            return "Nieprawidłowy wybór";
+        }
+
         ChatCompletionRequest request = ChatCompletionRequest.builder()
                 .messages(List.of(new ChatMessage("user", question)))
                 .model("gpt-4-turbo-preview")
@@ -35,7 +43,11 @@ public class AiRecommendationService {
                 .orElse("Nie udało się uzyskać odpowiedzi");
     }
 
-    private String createQuestion(List<String> products) {
-        return "Mam w lodówce następujące produkty : " + String.join(", ", products) + ". Proszę, stwórz przepis kulinarny używając tylko produktów z tej listy. Możesz nie wykorzystać wszystkich produktów, ale upewnij się, że w przepisie nie ma produktów spoza listy. Wynik proszę przedstawić w czytelnej, uporządkowanej formie, zawierając nazwę przepisu, listę wykorzystanych składników oraz krok po kroku instrukcje przygotowania";
+    private String createQuestionSweetRecipe(List<String> products) {
+        return "Mam w lodówce następujące produkty : " + String.join(", ", products) + ". Proszę, stwórz przepis kulinarny na słodko używając tylko produktów z tej listy. Możesz nie wykorzystać wszystkich produktów, ale upewnij się, że w przepisie nie ma produktów spoza listy. Wynik proszę przedstawić w czytelnej, uporządkowanej formie, zawierając nazwę przepisu, listę wykorzystanych składników oraz krok po kroku instrukcje przygotowania jeśli z tych produktów nie da sie nic zrobić poinformuj mnie o tym";
+    }
+
+    private String createQuestionSavouryRecipe(List<String> products) {
+        return "Mam w lodówce następujące produkty : " + String.join(", ", products) + ". Proszę, stwórz przepis kulinarny na słono używając tylko produktów z tej listy. Możesz nie wykorzystać wszystkich produktów, ale upewnij się, że w przepisie nie ma produktów spoza listy. Wynik proszę przedstawić w czytelnej, uporządkowanej formie, zawierając nazwę przepisu, listę wykorzystanych składników oraz krok po kroku instrukcje przygotowania jeśli z tych produktów nie da sie nic zrobić poinformuj mnie o tym";
     }
 }

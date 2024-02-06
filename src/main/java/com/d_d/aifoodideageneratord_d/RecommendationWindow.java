@@ -10,11 +10,14 @@ import java.util.List;
 
 public class RecommendationWindow {
 
-    List<String> products;
+    private List<String> products;
+    private String choice;
 
-    public RecommendationWindow(List<String> products){
+    public RecommendationWindow(List<String> products, String choice) {
         this.products = products;
+        this.choice = choice;
     }
+
     public void open() throws IOException {
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(RecommendationWindow.class.getResource("recommendation-window.fxml"));
@@ -24,6 +27,6 @@ public class RecommendationWindow {
         stage.show();
 
         RecommendationWindowController controller = fxmlLoader.getController();
-        controller.recommend(products);
+        controller.recommend(products, choice);
     }
 }

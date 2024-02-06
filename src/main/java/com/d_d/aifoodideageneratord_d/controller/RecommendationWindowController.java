@@ -13,8 +13,14 @@ public class RecommendationWindowController {
 
     private final AiRecommendationService recommendationService = new AiRecommendationService();
 
-    public void recommend(List<String> products) {
-        String recommendation = recommendationService.getRecommendation(products);
+    public void recommend(List<String> products, String choice) {
+        String recommendation = "";
+
+        if ("sweet".equals(choice)) {
+            recommendation = recommendationService.getRecommendation(products, "sweet");
+        } else if ("savoury".equals(choice)) {
+            recommendation = recommendationService.getRecommendation(products, "savoury");
+        }
         recommendationLabel.setText(recommendation);
     }
 }

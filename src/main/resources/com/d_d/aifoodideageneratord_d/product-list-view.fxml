@@ -16,7 +16,8 @@
         <Button text="Usuń" onAction="#onDeleteProduct"/>
     </HBox>
     <ListView fx:id="productList"/>
-    <Button text="Co moge zjeść ? " onAction="#recommend"/>
+    <Button text="Co moge zjeść na słodko ? " onAction="#recommendSweetRecipe"/>
+    <Button text="Co moge zjeść na słono ? " onAction="#recommendSavouryRecipe"/>
 
 
 </VBox>
