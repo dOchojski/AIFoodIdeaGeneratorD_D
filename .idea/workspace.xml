@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0c76399-b54e-4353-b2c3-bba2eb0e70a0" name="Changes" comment="all changes">
+    <list default="true" id="c0c76399-b54e-4353-b2c3-bba2eb0e70a0" name="Changes" comment="Ai recommend choice added">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/d_d/aifoodideageneratord_d/ProductListApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/d_d/aifoodideageneratord_d/ProductListApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/d_d/aifoodideageneratord_d/RecommendationWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/d_d/aifoodideageneratord_d/RecommendationWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/d_d/aifoodideageneratord_d/controller/ProductListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/d_d/aifoodideageneratord_d/controller/ProductListController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/d_d/aifoodideageneratord_d/controller/RecommendationWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/d_d/aifoodideageneratord_d/controller/RecommendationWindowController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/d_d/aifoodideageneratord_d/services/AiRecommendationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/d_d/aifoodideageneratord_d/services/AiRecommendationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/d_d/aifoodideageneratord_d/product-list-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/d_d/aifoodideageneratord_d/product-list-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +24,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4
+}]]></component>
   <component name="ProjectId" id="2bmwAQsA3TVTIJO0JzK7zhwYjtX" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -38,10 +37,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Launcher.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/48503/IdeaProjects/AIFoodIdeaGeneratorD_D/src/main/java/com/d_d/aifoodideageneratord_d",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -49,6 +50,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "spring.configuration.checksum": "2867511afe74fcaea430a7f7e4c88e96",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -60,6 +62,9 @@
   </component>
   <component name="RunManager">
     <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <envs>
+        <env name="OPENAI_API_KEY" value="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" />
+      </envs>
       <option name="MAIN_CLASS_NAME" value="com.d_d.aifoodideageneratord_d.Launcher" />
       <module name="AIFoodIdeaGenerator" />
       <extension name="coverage">
@@ -78,6 +83,13 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -86,7 +98,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1706833418348</updated>
-      <workItem from="1706833419396" duration="6931000" />
+      <workItem from="1706833419396" duration="9278000" />
+      <workItem from="1707258946507" duration="1091000" />
+      <workItem from="1707331777724" duration="1217000" />
     </task>
     <task id="LOCAL-00001" summary="all changes">
       <created>1706834305844</created>
@@ -95,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1706834305844</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Ai recommend choice added">
+      <created>1707253951937</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1707253951937</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -103,7 +124,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="all changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="all changes" />
+    <MESSAGE value="Ai recommend choice added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ai recommend choice added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,6 +1,5 @@
 package com.d_d.aifoodideageneratord_d.services;
 
-import com.d_d.aifoodideageneratord_d.config.ConfigLoader;
 import com.theokanning.openai.completion.chat.ChatCompletionChoice;
 import com.theokanning.openai.completion.chat.ChatCompletionRequest;
 import com.theokanning.openai.completion.chat.ChatCompletionResult;
@@ -9,15 +8,17 @@ import com.theokanning.openai.service.OpenAiService;
 
 import java.time.Duration;
 import java.util.List;
-import java.util.Properties;
 
 public class AiRecommendationService {
 
     private final OpenAiService openAiService;
 
     public AiRecommendationService() {
-        Properties properties = ConfigLoader.loadProperties("src/main/resources/application.properties");
-        this.openAiService = new OpenAiService(properties.getProperty("token"), Duration.ofSeconds(60));
+        String apiToken = System.getenv("OPENAI_API_KEY");
+        if (apiToken == null || apiToken.isEmpty()) {
+            throw new IllegalArgumentException("Please set the OPENAI_API_KEY in environment variable.");
+        }
+        this.openAiService = new OpenAiService(apiToken, Duration.ofSeconds(60));
     }
 
     public String getRecommendation(List<String> products, String choice) {
@@ -27,7 +28,7 @@ public class AiRecommendationService {
         } else if ("savoury".equals(choice)) {
             question = createQuestionSavouryRecipe(products);
         } else {
-            return "Nieprawidłowy wybór";
+            return "Bad choice";
         }
 
         ChatCompletionRequest request = ChatCompletionRequest.builder()
