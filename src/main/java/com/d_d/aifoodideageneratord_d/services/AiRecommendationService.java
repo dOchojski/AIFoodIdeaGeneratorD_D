@@ -39,7 +39,7 @@ public class AiRecommendationService {
                 "Please, create a recipe using only the items from this list. " +
                 "You may not use all the products, but make sure that there are no items in the recipe that are not on the list. " +
                 "Present the result in a clear, organized manner, including the name of the recipe, a list of used ingredients, and step-by-step instructions. " +
-                "If it's not possible to make anything with these products, please let me know.", productList, recipeType.getDescription());
+                "If it's not possible to make anything with these products, please let me know and let the answer be in Polish.", productList, recipeType.getDescription());
     }
 
     private ChatCompletionRequest buildChatCompletionRequest(String question) {
