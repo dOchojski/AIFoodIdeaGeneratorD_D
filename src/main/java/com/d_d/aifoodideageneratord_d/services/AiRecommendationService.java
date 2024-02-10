@@ -35,10 +35,11 @@ public class AiRecommendationService {
 
     private String createQuestion(List<String> products, RecipeType recipeType) {
         String productList = String.join(", ", products);
-        return String.format("Mam w lodówce następujące produkty: %s. Proszę, stwórz przepis kulinarny na %s używając tylko produktów z tej listy. " +
-                "Możesz nie wykorzystać wszystkich produktów, ale upewnij się, że w przepisie nie ma produktów spoza listy. " +
-                "Wynik proszę przedstawić w czytelnej, uporządkowanej formie, zawierając nazwę przepisu, listę wykorzystanych składników oraz krok po kroku instrukcje przygotowania. " +
-                "Jeśli z tych produktów nie da się nic zrobić poinformuj mnie o tym.", productList, recipeType.getDescription());
+        return String.format("I have the following products in my fridge: %s. " +
+                "Please, create a recipe using only the items from this list. " +
+                "You may not use all the products, but make sure that there are no items in the recipe that are not on the list. " +
+                "Present the result in a clear, organized manner, including the name of the recipe, a list of used ingredients, and step-by-step instructions. " +
+                "If it's not possible to make anything with these products, please let me know.", productList, recipeType.getDescription());
     }
 
     private ChatCompletionRequest buildChatCompletionRequest(String question) {
@@ -54,7 +55,7 @@ public class AiRecommendationService {
                 .map(ChatCompletionChoice::getMessage)
                 .map(ChatMessage::getContent)
                 .findFirst()
-                .orElse("Nie udało się uzyskać odpowiedzi");
+                .orElse("Failed to get a response");
     }
 
     private void validApiToken(String apiToken) {
