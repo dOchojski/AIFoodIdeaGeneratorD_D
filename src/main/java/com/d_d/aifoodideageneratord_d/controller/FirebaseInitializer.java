@@ -10,19 +10,19 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class FirebaseInitializer {
-    private static final String CONFIG_PATH = "src/main/resources/aieatproompt-firebase-adminsdk-itb1t-125108c2e4.json";
+    private static final String CONFIG_PATH = "/aieatproompt-firebase-adminsdk-itb1t-125108c2e4.json";
     private static final String DATABASE_URL = "https://aieatproompt.firebaseio.com";
 
     public static void initialize() throws IOException {
-            FirebaseOptions options = buildFirebaseOptions();
-            initializeFirebase(options);
-            Firestore db = FirestoreClient.getFirestore();
-            db.collection("recipe").document().collection(DATABASE_URL);
+        FirebaseOptions options = buildFirebaseOptions();
+        initializeFirebase(options);
+        Firestore db = FirestoreClient.getFirestore();
+        db.collection("recipe").document().collection(DATABASE_URL);
     }
 
     private static FirebaseOptions buildFirebaseOptions() throws IOException {
-        try {
-            InputStream serviceAccount = FirebaseInitializer.class.getResourceAsStream(CONFIG_PATH);
+        //try with resources
+        try (InputStream serviceAccount = FirebaseInitializer.class.getResourceAsStream(CONFIG_PATH)) {
             if (serviceAccount != null) {
                 return new FirebaseOptions.Builder()
                         .setCredentials(GoogleCredentials.fromStream(serviceAccount))
