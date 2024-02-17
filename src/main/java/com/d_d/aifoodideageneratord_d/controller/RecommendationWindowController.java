@@ -33,6 +33,7 @@ public class RecommendationWindowController {
     public void initialize() {
         this.firestoreService = new FirestoreService();
         this.recommendationService = new AiRecommendationService();
+        this.pdfExportService = new PdfExportService();
     }
 
     public void recommend(List<String> products, String choice) {
