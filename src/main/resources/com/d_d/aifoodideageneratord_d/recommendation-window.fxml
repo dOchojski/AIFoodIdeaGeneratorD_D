@@ -11,6 +11,6 @@
     </padding>
 
     <Label fx:id="recommendationLabel" wrapText="true"/>
-    <Button text="Zapisz przepis" onAction="#handleSaveRecipe"/>
+    <Button fx:id="saveReceiptButton" text="Zapisz przepis" onAction="#handleSaveRecipe"/>
 
 </VBox>
