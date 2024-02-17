@@ -1,7 +1,6 @@
 package com.d_d.aifoodideageneratord_d;
 
 import com.d_d.aifoodideageneratord_d.controller.RecommendationWindowController;
-import com.d_d.aifoodideageneratord_d.services.FirestoreService;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;

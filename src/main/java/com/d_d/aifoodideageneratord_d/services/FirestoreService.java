@@ -6,7 +6,6 @@ import com.google.cloud.firestore.Firestore;
 import com.google.cloud.firestore.WriteResult;
 import com.google.firebase.cloud.FirestoreClient;
 import javafx.application.Platform;
-import javafx.scene.control.Alert;
 
 import java.util.HashMap;
 import java.util.Map;
