@@ -2,6 +2,7 @@ package com.d_d.aifoodideageneratord_d.controller;
 
 import com.d_d.aifoodideageneratord_d.services.AiRecommendationService;
 import com.d_d.aifoodideageneratord_d.services.FirestoreService;
+import com.d_d.aifoodideageneratord_d.services.PdfExportService;
 import com.d_d.aifoodideageneratord_d.util.DialogsHelper;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
@@ -29,6 +30,7 @@ public class RecommendationWindowController {
     private Button exportToPdfButton;
 
     private AiRecommendationService recommendationService;
+    private PdfExportService pdfExportService;
 
     private FirestoreService firestoreService;
 
@@ -85,25 +87,14 @@ public class RecommendationWindowController {
         File file = fileChooser.showSaveDialog(stage);
 
         if (file != null) {
-            exportRecipeToPdf(recommendationLabel.getText(), file);
-        }
-    }
+            try {
+                pdfExportService.exportRecipeToPdf(recommendationLabel.getText(), file);
+                DialogsHelper.showSuccessAlert("The recipe has been successfully saved to a PDF file");
+            } catch (Exception e) {
+                DialogsHelper.showErrorAlert("Failed to export recipe to PDF: " + e.getMessage());
+                exportToPdfButton.setVisible(false);
+            }
 
-    private void exportRecipeToPdf(String recipeContent, File file) {
-        try {
-            PdfWriter writer = new PdfWriter(file.getAbsolutePath());
-            PdfDocument pdf = new PdfDocument(writer);
-            Document document = new Document(pdf);
-            document.add(new Paragraph(recipeContent));
-
-            document.close();
-
-            DialogsHelper.showSuccessAlert("The recipe has been successfully saved to a PDF file");
-
-        } catch (Exception e) {
-            DialogsHelper.showErrorAlert("Failed to export recipe to PDF: " + e.getMessage());
-
-            exportToPdfButton.setVisible(false);
         }
     }
 }
