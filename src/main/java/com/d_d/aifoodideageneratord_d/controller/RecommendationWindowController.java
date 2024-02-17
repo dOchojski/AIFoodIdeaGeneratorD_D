@@ -55,13 +55,11 @@ public class RecommendationWindowController {
             @Override
             protected void succeeded() {
                 super.succeeded();
-                System.out.println("The recipe was saved");
             }
 
             @Override
             protected void failed() {
                 super.failed();
-                System.err.println("Recipe not saved");
             }
         };
         new Thread(saveTask).start();

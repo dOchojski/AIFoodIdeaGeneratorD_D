@@ -20,6 +20,7 @@ public class ProductListApplication extends Application {
         }
         FXMLLoader fxmlLoader = new FXMLLoader(ProductListApplication.class.getResource("product-list-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         stage.setTitle("Products List");
         stage.setScene(scene);
         stage.show();

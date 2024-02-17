@@ -5,6 +5,7 @@ import com.google.cloud.firestore.Firestore;
 import com.google.cloud.firestore.WriteResult;
 import com.google.firebase.cloud.FirestoreClient;
 import javafx.application.Platform;
+import javafx.scene.control.Alert;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -28,14 +29,27 @@ public class FirestoreService {
         future.addListener(() -> {
             try {
                 WriteResult result = future.get();
-                Platform.runLater(() -> {
-                    System.out.println("The recipe was saved with ID: " + documentId);
-                });
+                Platform.runLater(() -> showSuccessAlert(documentId));
             } catch (Exception e) {
-                Platform.runLater(() -> {
-                    System.err.println("Recipe could not be saved: " + e.getMessage());
-                });
+                Platform.runLater(() -> showErrorAlert(e.getMessage()));
             }
         }, Executors.newSingleThreadExecutor());
     }
+
+    private void showSuccessAlert(String documentId) {
+        Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
+        successAlert.setTitle("Success");
+        successAlert.setHeaderText(null);
+        successAlert.setContentText("The recipe was saved with ID: " + documentId);
+        successAlert.showAndWait();
+    }
+
+    private void showErrorAlert(String errorMessage) {
+        Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+        errorAlert.setTitle("Error");
+        errorAlert.setHeaderText("Recipe could not be saved");
+        errorAlert.setContentText(errorMessage);
+        errorAlert.showAndWait();
+    }
+
 }
