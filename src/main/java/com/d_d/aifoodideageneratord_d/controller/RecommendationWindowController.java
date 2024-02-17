@@ -2,11 +2,19 @@ package com.d_d.aifoodideageneratord_d.controller;
 
 import com.d_d.aifoodideageneratord_d.services.AiRecommendationService;
 import com.d_d.aifoodideageneratord_d.services.FirestoreService;
+import com.d_d.aifoodideageneratord_d.util.DialogsHelper;
+import com.itextpdf.kernel.pdf.PdfDocument;
+import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.layout.Document;
+import com.itextpdf.layout.element.Paragraph;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
+import java.io.File;
 import java.util.List;
 
 public class RecommendationWindowController {
@@ -16,6 +24,9 @@ public class RecommendationWindowController {
 
     @FXML
     private Button saveReceiptButton;
+
+    @FXML
+    private Button exportToPdfButton;
 
     private AiRecommendationService recommendationService;
 
@@ -37,7 +48,7 @@ public class RecommendationWindowController {
             }
             recommendationLabel.setText(recommendation);
         } catch (Exception exception) {
-            recommendationLabel.setText("Nie udało się znaleźć przepisu");
+            recommendationLabel.setText("Couldn't find recipe");
             saveReceiptButton.setVisible(false);
         }
     }
@@ -64,4 +75,37 @@ public class RecommendationWindowController {
         };
         new Thread(saveTask).start();
     }
+
+    @FXML
+    private void handleExportToPdf() {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Save recipe to PDF");
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Dokument PDF", "*.pdf"));
+        Stage stage = (Stage) recommendationLabel.getScene().getWindow();
+        File file = fileChooser.showSaveDialog(stage);
+
+        if (file != null) {
+            exportRecipeToPdf(recommendationLabel.getText(), file);
+        }
+    }
+
+    private void exportRecipeToPdf(String recipeContent, File file) {
+        try {
+            PdfWriter writer = new PdfWriter(file.getAbsolutePath());
+            PdfDocument pdf = new PdfDocument(writer);
+            Document document = new Document(pdf);
+            document.add(new Paragraph(recipeContent));
+
+            document.close();
+
+            DialogsHelper.showSuccessAlert("The recipe has been successfully saved to a PDF file");
+
+        } catch (Exception e) {
+            DialogsHelper.showErrorAlert("Failed to export recipe to PDF: " + e.getMessage());
+
+            exportToPdfButton.setVisible(false);
+        }
+    }
 }
+
+

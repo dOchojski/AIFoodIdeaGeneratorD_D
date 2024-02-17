@@ -1,5 +1,6 @@
 package com.d_d.aifoodideageneratord_d.services;
 
+import com.d_d.aifoodideageneratord_d.util.DialogsHelper;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.Firestore;
 import com.google.cloud.firestore.WriteResult;
@@ -29,27 +30,10 @@ public class FirestoreService {
         future.addListener(() -> {
             try {
                 WriteResult result = future.get();
-                Platform.runLater(() -> showSuccessAlert(documentId));
+                Platform.runLater(() -> DialogsHelper.showSuccessAlert("The recipe was saved with ID: " + documentId));
             } catch (Exception e) {
-                Platform.runLater(() -> showErrorAlert(e.getMessage()));
+                Platform.runLater(() -> DialogsHelper.showErrorAlert("Recipe could not be saved : " + e.getMessage()));
             }
         }, Executors.newSingleThreadExecutor());
     }
-
-    private void showSuccessAlert(String documentId) {
-        Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
-        successAlert.setTitle("Success");
-        successAlert.setHeaderText(null);
-        successAlert.setContentText("The recipe was saved with ID: " + documentId);
-        successAlert.showAndWait();
-    }
-
-    private void showErrorAlert(String errorMessage) {
-        Alert errorAlert = new Alert(Alert.AlertType.ERROR);
-        errorAlert.setTitle("Error");
-        errorAlert.setHeaderText("Recipe could not be saved");
-        errorAlert.setContentText(errorMessage);
-        errorAlert.showAndWait();
-    }
-
 }

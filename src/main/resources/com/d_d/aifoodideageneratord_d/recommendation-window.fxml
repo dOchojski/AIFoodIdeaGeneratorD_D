@@ -12,5 +12,6 @@
 
     <Label fx:id="recommendationLabel" wrapText="true"/>
     <Button fx:id="saveReceiptButton" text="Zapisz przepis" onAction="#handleSaveRecipe"/>
+    <Button fx:id="exportToPdfButton" text="Eksportuj do PDF" onAction="#handleExportToPdf"/>
 
 </VBox>
