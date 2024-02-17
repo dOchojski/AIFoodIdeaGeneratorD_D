@@ -2,6 +2,7 @@ package com.d_d.aifoodideageneratord_d.controller;
 
 import com.d_d.aifoodideageneratord_d.services.AiRecommendationService;
 import com.d_d.aifoodideageneratord_d.services.FirestoreService;
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -44,6 +45,25 @@ public class RecommendationWindowController {
     @FXML
     private void handleSaveRecipe() {
         String recipeContent = recommendationLabel.getText();
-        firestoreService.saveRecipe(recipeContent);
+        Task<Void> saveTask = new Task<Void>() {
+            @Override
+            protected Void call() throws Exception {
+                firestoreService.saveRecipe(recipeContent);
+                return null;
+            }
+
+            @Override
+            protected void succeeded() {
+                super.succeeded();
+                System.out.println("The recipe was saved");
+            }
+
+            @Override
+            protected void failed() {
+                super.failed();
+                System.err.println("Recipe not saved");
+            }
+        };
+        new Thread(saveTask).start();
     }
 }

@@ -38,10 +38,4 @@ public class FirestoreService {
             }
         }, Executors.newSingleThreadExecutor());
     }
-
-
-//    public void addDocument(String collectionPath, String documentId, Object data) throws Exception {
-//        db.collection(collectionPath).document(documentId).set(data);
-//        System.out.println("Dokument został dodany do kolekcji " + collectionPath);
-//    }
 }
