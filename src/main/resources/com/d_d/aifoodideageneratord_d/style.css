@@ -1,6 +1,9 @@
 .root {
-    -fx-background-color: linear-gradient(to bottom, #ffffff, #e6e6e6);
+    -fx-background-image: url('images/tło.png');
+    -fx-background-repeat: stretch;
+    -fx-background-size: cover;
 }
+
 
 .header {
     -fx-font-size: 24px;

@@ -61,6 +61,12 @@
             <type>pom</type>
         </dependency>
 
+        <dependency>
+            <groupId>com.atlassian.commonmark</groupId>
+            <artifactId>commonmark</artifactId>
+            <version>0.15.2</version>
+        </dependency>
+
 
         <dependency>
             <groupId>com.google.firebase</groupId>

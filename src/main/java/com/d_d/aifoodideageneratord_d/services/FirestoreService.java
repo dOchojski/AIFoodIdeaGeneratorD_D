@@ -2,6 +2,7 @@ package com.d_d.aifoodideageneratord_d.services;
 
 import com.d_d.aifoodideageneratord_d.model.Recipe;
 import com.d_d.aifoodideageneratord_d.util.DialogsHelper;
+import com.d_d.aifoodideageneratord_d.util.RecipeUtils;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.Firestore;
 import com.google.cloud.firestore.QuerySnapshot;
@@ -26,6 +27,8 @@ public class FirestoreService {
     public void saveRecipe(String recipeName) {
         Map<String, Object> data = new HashMap<>();
         data.put("content", recipeName);
+        String title = RecipeUtils.extractTitleFromContent(recipeName);
+        data.put("title", title);
 
         String documentId = db.collection("recipe").document().getId();
 
