@@ -1,24 +1,69 @@
+.root {
+    -fx-background-color: linear-gradient(to bottom, #ffffff, #e6e6e6);
+}
+
+.header {
+    -fx-font-size: 24px;
+    -fx-text-fill: #5c5c5c;
+    -fx-padding: 10px;
+    -fx-alignment: center;
+}
+
+.search-bar {
+    -fx-padding: 10px;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5px;
+    -fx-background-color: #ffffff;
+}
+
 .button {
-    -fx-background-color: #4CAF50;
-    -fx-text-fill: white;
-    -fx-font-weight: bold;
-    -fx-border-radius: 5;
-    -fx-background-radius: 5;
+    -fx-background-color: #2e8b57;
+    -fx-text-fill: #ffffff;
+    -fx-border-radius: 15;
+    -fx-background-radius: 15;
     -fx-padding: 10 20;
 }
 
 .button:hover {
-    -fx-background-color: #45a049;
+    -fx-background-color: #3cb371;
 }
 
-.label {
-    -fx-font-size: 16px;
-    -fx-text-fill: #333;
+
+.product-list {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+}
+
+.footer-button {
+    -fx-font-size: 14px;
+    -fx-background-color: #ff8c00;
+    -fx-text-fill: white;
+    -fx-background-radius: 5;
+    -fx-padding: 10 20;
+}
+
+.footer-button:hover {
+    -fx-background-color: #ff7f00;
+}
+
+.list-view {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #dddddd;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 10);
+    -fx-padding: 5px;
+}
+
+.text-field {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #dddddd;
+    -fx-border-width: 2;
+    -fx-border-radius: 15;
 }
 
 .vbox {
-    -fx-background-color: #f0f0f0;
-    -fx-padding: 20;
     -fx-spacing: 10;
     -fx-alignment: center;
 }

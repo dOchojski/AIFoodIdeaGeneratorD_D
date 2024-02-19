@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.ListView?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.d_d.aifoodideageneratord_d.controller.RecipeListController">
+    <ListView fx:id="recipesListView" prefHeight="400.0" prefWidth="600.0" />
+</AnchorPane>

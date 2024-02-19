@@ -1,11 +1,16 @@
 package com.d_d.aifoodideageneratord_d.services;
 
+import com.d_d.aifoodideageneratord_d.model.Recipe;
 import com.d_d.aifoodideageneratord_d.util.DialogsHelper;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.Firestore;
+import com.google.cloud.firestore.QuerySnapshot;
 import com.google.cloud.firestore.WriteResult;
 import com.google.firebase.cloud.FirestoreClient;
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.concurrent.Task;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -34,5 +39,24 @@ public class FirestoreService {
                 Platform.runLater(() -> DialogsHelper.showErrorAlert("Recipe could not be saved : " + e.getMessage()));
             }
         }, Executors.newSingleThreadExecutor());
+    }
+
+    public Task<ObservableList<Recipe>> getSavedRecipes() {
+        return new Task<>() {
+            @Override
+            protected ObservableList<Recipe> call() throws Exception {
+                ObservableList<Recipe> recipes = FXCollections.observableArrayList();
+                ApiFuture<QuerySnapshot> future = db.collection("recipe").get();
+                QuerySnapshot querySnapshot = future.get();
+
+                if (querySnapshot != null) {
+                    querySnapshot.getDocuments().forEach(documentSnapshot -> {
+                        recipes.add(documentSnapshot.toObject(Recipe.class));
+                    });
+                }
+
+                return recipes;
+            }
+        };
     }
 }

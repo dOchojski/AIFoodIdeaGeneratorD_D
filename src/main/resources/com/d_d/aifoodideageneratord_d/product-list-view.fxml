@@ -2,22 +2,36 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<VBox alignment="CENTER" spacing="20.0" styleClass="vbox" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.d_d.aifoodideageneratord_d.controller.ProductListController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
-
-    <HBox spacing="10">
-        <TextField HBox.hgrow="ALWAYS" fx:id="product" onAction="#onAddProduct"/>
-        <Button text="Dodaj" onAction="#onAddProduct"/>
-        <Button text="Usuń" onAction="#onDeleteProduct"/>
-    </HBox>
-    <ListView fx:id="productList"/>
-    <Button text="Co moge zjeść na słodko ? " onAction="#recommendSweetRecipe"/>
-    <Button text="Co moge zjeść na słono ? " onAction="#recommendSavouryRecipe"/>
-
-
-</VBox>
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.d_d.aifoodideageneratord_d.controller.ProductListController">
+    <center>
+        <TabPane fx:id="mainTabPane">
+            <tabs>
+                <Tab text="Lista Produktów">
+                    <content>
+                        <VBox alignment="CENTER" spacing="20.0" styleClass="vbox">
+                            <padding>
+                                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+                            </padding>
+                            <HBox spacing="10">
+                                <TextField HBox.hgrow="ALWAYS" fx:id="product" onAction="#onAddProduct"/>
+                                <Button text="Dodaj" onAction="#onAddProduct"/>
+                                <Button text="Usuń" onAction="#onDeleteProduct"/>
+                            </HBox>
+                            <ListView fx:id="productList"/>
+                            <Button text="Co moge zjeść na słodko ? " onAction="#recommendSweetRecipe"/>
+                            <Button text="Co moge zjeść na słono ? " onAction="#recommendSavouryRecipe"/>
+                        </VBox>
+                    </content>
+                </Tab>
+                <Tab text="Przepisy">
+                    <content>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </center>
+</BorderPane>
