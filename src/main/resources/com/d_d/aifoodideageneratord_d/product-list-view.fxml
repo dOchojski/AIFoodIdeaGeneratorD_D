@@ -5,6 +5,8 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
 <BorderPane xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.d_d.aifoodideageneratord_d.controller.ProductListController">
     <center>
@@ -22,8 +24,22 @@
                                 <Button text="Usuń" onAction="#onDeleteProduct"/>
                             </HBox>
                             <ListView fx:id="productList"/>
-                            <Button text="Co moge zjeść na słodko ? " onAction="#recommendSweetRecipe"/>
-                            <Button text="Co moge zjeść na słono ? " onAction="#recommendSavouryRecipe"/>
+                            <HBox spacing="10" alignment="CENTER">
+                                <Button onAction="#recommendSweetRecipe">
+                                    <graphic>
+                                        <ImageView fitWidth="100" fitHeight="100" preserveRatio="true">
+                                            <Image url="@/com/d_d/aifoodideageneratord_d/images/sweetDish.png"/>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                                <Button onAction="#recommendSavouryRecipe">
+                                    <graphic>
+                                        <ImageView fitWidth="100" fitHeight="100" preserveRatio="true">
+                                            <Image url="@/com/d_d/aifoodideageneratord_d/images/savouryDish.png"/>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                            </HBox>
                         </VBox>
                     </content>
                 </Tab>
